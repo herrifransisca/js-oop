@@ -12,24 +12,18 @@ function HtmlSelectElement(items = []) {
   this.items = items;
 
   this.addItem = function(item) {
-    this.item.push(item);
+    this.items.push(item);
   };
 
   this.removeItem = function(item) {
-    this.item.splice(this.items.indexOf(item), 1);
-  };
-
-  this.render = function() {
-    const options = this.items
-      .map(value => `<option>${value}</option>`)
-      .join('');
-    console.log(this.items);
-    console.log(options);
+    this.items.splice(this.items.indexOf(item), 1);
   };
 }
-
 HtmlSelectElement.prototype = new HtmlElement();
 HtmlSelectElement.prototype.constructor = HtmlSelectElement;
 
-const s = new HtmlSelectElement([1, 2, 3]);
-console.log('test');
+const e = new HtmlElement();
+console.log(e);
+
+const s = new HtmlSelectElement();
+console.log(s);
